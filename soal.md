@@ -37,7 +37,6 @@ menggunakan `sequelize`
 `Learning`
 | Field     | Type        | Description                 |
 |:----------|:------------|:----------------------------|
-
 | id        | INTEGER     | AUTO INCREMENT, PRIMARY KEY |
 | CourseId  | INTEGER     | FOREIGN KEY, NOT NULL       |
 | StudentId | INTEGER     | FOREIGN KEY, NOT NULL       |
