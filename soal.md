@@ -28,39 +28,44 @@ menggunakan `sequelize`
 | updatedAt | TIMESTAMP    | NOT NULL                   |
 
 `Students`
-| Field     | Type        | Description                 |
-|:----------|:------------|:----------------------------|
-| id        | INTEGER     | AUTO INCREMENT, PRIMARY KEY |
-| firstName | VARCHAR(255)| NOT NULL                    |
-| lastName  | VARCHAR(255)| NOT NULL                    |
+| Field     | Type         | Description                 |
+|:----------|:-------------|:----------------------------|
+| id        | INTEGER      | AUTO INCREMENT, PRIMARY KEY |
+| firstName | VARCHAR(255) | NOT NULL                    |
+| lastName  | VARCHAR(255) | NOT NULL                    |
+| createdAt | TIMESTAMP    | NOT NULL                    |
+| updatedAt | TIMESTAMP    | NOT NULL                    |
 
-`Learning`
-| Field     | Type        | Description                 |
-|:----------|:------------|:----------------------------|
-| id        | INTEGER     | AUTO INCREMENT, PRIMARY KEY |
-| CourseId  | INTEGER     | FOREIGN KEY, NOT NULL       |
-| StudentId | INTEGER     | FOREIGN KEY, NOT NULL       |
+`Schedules`
+| Field     | Type         | Description                 |
+|:----------|:-------------|:----------------------------|
+| id        | INTEGER      | AUTO INCREMENT, PRIMARY KEY |
+| CourseId  | INTEGER      | FOREIGN KEY, NOT NULL       |
+| StudentId | INTEGER      | FOREIGN KEY, NOT NULL       |
+| createdAt | TIMESTAMP    | NOT NULL                    |
+| updatedAt | TIMESTAMP    | NOT NULL                    |
 
 ## Langkah 3 - Populasikan Data
 
-Dengan diberikan data dalam bentuk `data/students.json` dan `data/courses.json`,
-buatlah seeder pada `sequelize` untuk mempopulasikan data pada Tabel tertentu.
+Dengan diberikan data dalam bentuk `data/students.json`, `data/courses.json`,
+dan `data/schedules.json`. Buatlah seeder pada `sequelize` untuk mempopulasikan 
+data pada semua Tabel tersebut.
 
 ## Langkah 4 - Buat Routing
 
 Dengan diberikan data endpoint sebagai berikut, buatlah routingnya !
 
-| Endpoints         | Description                                    |
-|:------------------|:-----------------------------------------------|
-| GET /students     | Tampilkan seluruh murid dalam bentuk tabel     |
-| GET /students/add | Tampilkan form untuk penambahan murid          |
-| POST /students/add| handle form penambahan murid                   |
-| GET /courses      | Tampilkan seluruh pelajaran dalam bentuk tabel |
-| GET /courses/add  | Tampilkan form untuk penambahan pelajaran      |
-| POST /courses/add | handle form penambahan pelajaran               | 
-| GET /learning     | Tampilkan nama pembelajaran dan nama muridnya  |
-| GET /learning/add | Tampilkan form penambahan pembelajaran         |
-| POST /learning/add| hanlde form penambahan pembelajaran            |
+| Endpoints          | Description                                    |
+|:-------------------|:-----------------------------------------------|
+| GET /students      | Tampilkan seluruh murid dalam bentuk tabel     |
+| GET /students/add  | Tampilkan form untuk penambahan murid          |
+| POST /students/add | handle form penambahan murid                   |
+| GET /courses       | Tampilkan seluruh pelajaran dalam bentuk tabel |
+| GET /courses/add   | Tampilkan form untuk penambahan pelajaran      |
+| POST /courses/add  | handle form penambahan pelajaran               | 
+| GET /schedules     | Tampilkan nama pembelajaran dan nama muridnya  |
+| GET /schedules/add | Tampilkan form penambahan pembelajaran         |
+| POST /schedules/add| hanlde form penambahan pembelajaran            |
 
 ## Langkah 5 - Implementasikan GET /students
 Buatlah sebuah halaman dalam bentuk tabel untuk menampilkan data dari
@@ -82,15 +87,15 @@ Buatlah sebuah halaman yang berisi sebuah form untuk menambahan pelajaran
 ## Langkah 10 - Implementasikan POST /courses/add
 Buatlah logic untuk menghandle form penambahan pelajaran pada `GET /courses/add`
 
-## Langkah 11 - Implementasikan GET /learning
+## Langkah 11 - Implementasikan GET /schedules
 Buatlah sebuah halaman dalam bentuk tabel untuk menampilkan data dari
-pembelajaran dalam bentuk `Learning` id, `Courses` name, 
+pembelajaran dalam bentuk `Schedules` id, `Courses` name, 
 dan `Students` firstName + `Students` lastName
 
-## Langkah 12 - Implementasikan GET /learning/add
+## Langkah 12 - Implementasikan GET /schedules/add
 Buatlah sebuah halaman yang berisi sebuah form untuk menambahkan pembelajaran,
 Halaman ini berisi Nama Pelajar dan Nama Pelajaran yang bisa dipilih melalui
 `dropdown`.
 
-## Langkah 13 - Implementasikan POST /learning/add
-Buatlah logic untuk menghandle form dari `GET /learning/add`
+## Langkah 13 - Implementasikan POST /schedules/add
+Buatlah logic untuk menghandle form dari `GET /schedules/add`

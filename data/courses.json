@@ -1,0 +1,18 @@
+[
+  {
+    "name": "IF101 - Algoritma dan Pemrograman",
+    "max_caps": 12
+  },
+  {
+    "name": "IF102 - Struktur Data",
+    "max_caps": 25
+  },
+  {
+    "name": "EM101 - Mikroekonomi",
+    "max_caps": 33
+  },
+  {
+    "name": "EM102 - Makroekonomi",
+    "max_caps": 50
+  }
+]
